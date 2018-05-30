@@ -15,9 +15,13 @@ namespace MvcMovie.Controllers
         }
 
         // GET: HelloWorld/Welcome
-        public string Welcome(string name, int number)
+        public ActionResult Welcome(string name, int numTimes = 1)
         {
-            return "Thank you for using 'Welcome' URL segment! You wrote " + name + " and " + number;
+            // Example: http://localhost:50147/HelloWorld/Welcome?name=John&numTimes=10
+            ViewBag.Message = "Hello " + name;
+            ViewBag.NumTimes = numTimes;
+
+            return View();
         }
     }
 }
